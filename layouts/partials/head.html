@@ -20,6 +20,12 @@
 <link rel="stylesheet" href="{{ "css/creative.css" | absURL }}" type="text/css">
 <link rel="stylesheet" href="{{ "css/modals.css" | absURL }}" type="text/css">
 
+{{ if isset .Site.Params "location" }}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+{{ end }}
+
 {{ "<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->" | safeHTML }}
 {{ "<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->" | safeHTML }}
 {{ "<!--[if lt IE 9]>" | safeHTML }}
