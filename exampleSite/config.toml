@@ -26,17 +26,25 @@ googleAnalytics = ""
 	# The path must be relative to the static folder
 	favicon = "favicon.ico"
 
-
 	# Navigation
 	[params.navigation]
 		brand = "Hugo Creative Theme"
 
-		[params.navigation.links]
-			about     = "About"
-			services  = "Services"
-			portfolio = "Portfolio"
-			contact   = "Contact"
+		[[params.navigation.links]]
+			title = "About"
+			href = "#about"
 
+		[[params.navigation.links]]
+			title = "Services"
+			href = "#services"
+
+		[[params.navigation.links]]
+			title = "Portfolio"
+			href = "#portfolio"
+
+		[[params.navigation.links]]
+			title = "Contact"
+			href = "#contact"
 
 	# Hero section
 	[params.hero]
