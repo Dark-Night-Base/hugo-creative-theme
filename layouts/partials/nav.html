@@ -9,8 +9,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            {{ with .Site.Params.navigation.brand }}
-                <a class="navbar-brand page-scroll" href="#page-top">{{ . | markdownify }}</a>
+            {{ with .Site.Params.navigation }}
+                {{ if .brand }}
+                <a class="navbar-brand page-scroll" href="{{ .href | default "#page-top" }}">{{ .brand | markdownify }}</a>
+                {{ end }}
             {{ end }}
         </div>
         {{ "<!-- Collect the nav links, forms, and other content for toggling -->" | safeHTML }}
