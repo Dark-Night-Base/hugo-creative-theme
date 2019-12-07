@@ -3,7 +3,7 @@
     {{ with .Site.Params.navigation.brand }}
         <a class="navbar-brand page-scroll" href="#page-top">{{ . | markdownify }}</a>
     {{ end }}
-    <ul class="navbar-nav navbar-right" id="navbarNav">
+    <ul class="navbar-nav">
         {{ if and .Site.Params.about .Site.Params.navigation.links.about }}
             <li class="nav-item">
                 <a class="nav-link page-scroll" href="#about">{{ .Site.Params.navigation.links.about }}</a>
