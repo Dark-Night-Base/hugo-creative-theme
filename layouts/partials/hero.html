@@ -11,9 +11,9 @@
             {{ with .Site.Params.hero.subtitle }}
                 <p>{{ . | markdownify }}</p>
             {{ end }}
-            {{ with .Site.Params.hero.buttonText }}
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">{{ . }}</a>
-            {{ end }}
+	    <a href="{{ .Site.Params.hero.link }}" class="btn btn-default btn-xl">
+		 {{ .Site.Params.hero.buttonText }}
+	    </a>
         </div>
     </div>
 </header>
