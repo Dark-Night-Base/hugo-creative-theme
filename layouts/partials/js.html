@@ -6,10 +6,11 @@
 <script src="{{ "js/jquery.easing.min.js" | absURL }}"></script>
 <script src="{{ "js/jquery.fittext.js" | absURL }}"></script>
 <script src="{{ "js/wow.min.js" | absURL }}"></script>
-{{ if .Site.Params.location }}
-<script src="//maps.googleapis.com/maps/api/js?key={{ .Site.Params.location.maps_api_key }}&v=3.exp"></script>
-<script src="{{ "js/hpneo.gmaps.js" | absURL }}"></script>
-<script src="{{ "js/gmaps.init.js" | absURL }}"></script>
+{{ if isset .Site.Params "location" }}
+<script src="//unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+<script src="{{ "js/leaflet.init.js" | absURL }}"></script>
 {{ end }}
 {{ "<!-- Custom Theme JavaScript -->" | safeHTML }}
 <script src="{{ "js/creative.js" | absURL }}"></script>

@@ -1,66 +1,68 @@
 {{ "<!-- CONTACT -->" | safeHTML }}
-<section id="contact">
+{{ with .Site.Params.contact }}
+<section id="{{ .sectionid }}">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                {{ with .Site.Params.contact.headline }}
+            <div class="col-lg-8 offset-lg-2 text-center">
+                {{ with .headline }}
                     <h2 class="section-heading">{{ . }}</h2>
                 {{ end }}
-                {{ if and .Site.Params.contact.headline .Site.Params.contact.description }}
+                {{ if and .headline .description }}
                     <hr class="primary">
                 {{ end }}
-                {{ with .Site.Params.contact.description }}
+                {{ with .description }}
                     <p>{{ . | markdownify }}</p>
                 {{ end }}
             </div>
-            {{ if .Site.Params.contact.phone }}
+            {{ if .phone }}
                 <div class="
-                {{ if .Site.Params.contact.email }}
+                {{ if .email }}
                     col-lg-4
                 {{ else }}
                     col-lg-8
                 {{ end }}
-                col-lg-offset-2 text-center">
+                offset-lg-2 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                    <p>{{ .Site.Params.contact.phone }}</p>
+                    <p>{{ .phone }}</p>
                 </div>
             {{ end }}
-            {{ if .Site.Params.contact.email }}
+            {{ if .email }}
                 <div class="
-                {{ if .Site.Params.contact.github }}
+                {{ if .github }}
                     col-lg-4
                 {{ else }}
-                    col-lg-8 col-lg-offset-2
+                    col-lg-8 offset-lg-2
                 {{ end }}
                  text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:{{ .Site.Params.contact.email }}">{{ .Site.Params.contact.email }}</a></p>
+                    <p><a href="mailto:{{ .email }}">{{ .email }}</a></p>
                 </div>
             {{ end }}
-            {{ if .Site.Params.contact.github }}
+            {{ if .github }}
                 <div class="
-                {{ if .Site.Params.contact.email }}
+                {{ if .email }}
                     col-lg-4
                 {{ else }}
                     col-lg-8 col-lg-offset-2
                 {{ end }}
                  text-center">
                     <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="{{ .Site.Params.contact.github }}">{{ .Site.Params.contact.githubname }}</a></p>
+                    <p><a href="{{ .github }}">{{ .githubname }}</a></p>
                 </div>
             {{ end }}
-            {{ if .Site.Params.contact.map }}
+            {{ if .map }}
                 <div class="
-                <!--{{ if .Site.Params.contact.email }}
+                <!--{{ if .email }}
                     col-lg-4
                 {{ else }}
                     col-lg-8
                 <!--{{ end }}
                 col-lg-offset-2--> text-center">
                     <i class="fa fa-map fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="{{ .Site.Params.contact.map }}">{{ .Site.Params.contact.mapname }}</a></p>
+                    <p><a href="{{ .map }}">{{ .mapname }}</a></p>
                 </div>
             {{ end }}
         </div>
     </div>
 </section>
+{{ end }}
